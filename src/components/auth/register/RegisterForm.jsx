@@ -1,34 +1,48 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./LoginForm.css";
+import "./RegisterForm.css";
 
-function LoginForm({ onClose }) {
-  const navigate = useNavigate();
+function RegisterForm() {
+  const navigate = useNavigate(); // ← pour naviguer
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) {
-      // Ici tu peux faire ton appel API pour login
-      navigate("/dashboard"); // redirection vers dashboard
+
+    if (name && email && password) {
+      alert(`Compte créé pour ${name}`);
+      navigate("/login"); // ← redirection après inscription
     } else {
-      alert("Veuillez entrer vos identifiants !");
+      alert("Veuillez remplir tous les champs !");
     }
   };
 
   return (
-    <div className="login-overlay">
-      <div className="login-card">
-        {/* Bouton de retour */}
-        <button className="close-btn" onClick={onClose}>
+    <div className="overlay">
+      <div className="form-container">
+
+        {/* BOUTON RETOUR */}
+        <button className="close-btn" onClick={() => navigate("/login")}>
           ✖
         </button>
 
-        <h2 className="login-title">Connexion</h2>
+        <h2 className="form-title">Créer un compte</h2>
 
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleSubmit} className="register-form">
+          <div className="form-group">
+            <label>Nom complet</label>
+            <input
+              type="text"
+              placeholder="Nom complet"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
           <div className="form-group">
             <label>Email</label>
             <input
@@ -60,25 +74,20 @@ function LoginForm({ onClose }) {
             </div>
           </div>
 
-          <button type="submit" className="login-btn">
-            Se connecter
+          <button type="submit" className="register-btn">
+            S’inscrire
           </button>
         </form>
 
-        <div className="login-footer">
-          <p>
-            Pas de compte ?{" "}
-            <span
-              className="switch-btn"
-              onClick={() => navigate("/register")}
-            >
-              S’inscrire
-            </span>
-          </p>
-        </div>
+        <p className="switch-text">
+          Déjà un compte ?{" "}
+          <span className="link" onClick={() => navigate("/login")}>
+            Se connecter
+          </span>
+        </p>
       </div>
     </div>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

@@ -1,0 +1,51 @@
+/* Dashboard.css */
+.dashboard-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.stats-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.content-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.create-cv-btn {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cv-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* CVCard.css */
+.cv-card {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1 1 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.cv-actions button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

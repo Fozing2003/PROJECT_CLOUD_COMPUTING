@@ -1,0 +1,40 @@
+.sidebar {
+  width: 230px;
+  background: #1e1e2f;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar-title {
+  font-size: 22px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar-menu li {
+  list-style: none;
+  padding: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+  background: #2a2a40;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.sidebar-menu li:hover,
+.sidebar-menu li.active {
+  background: #4c4cff;
+}
+
+.logout-btn {
+  margin-top: 40px;
+  width: 100%;
+  padding: 12px;
+  background: #ff4b4b;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}

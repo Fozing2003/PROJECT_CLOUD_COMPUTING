@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 
-export default function Sidebar({ setSelectedModel }) {  // ← ajouter le prop
+export default function Sidebar({ setSelectedModel }) {
   const [openTemplates, setOpenTemplates] = useState(false);
+
+  const models = [
+    { id: 1, name: "Modèle 1", img: "/models/cv2.png" },
+    { id: 2, name: "Modèle 2", img: "/models/cv5.png" },
+  ];
 
   return (
     <aside className="sidebar">
@@ -12,9 +17,7 @@ export default function Sidebar({ setSelectedModel }) {  // ← ajouter le prop
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <Link to="/dashboard" className="sidebar-link">
-              Accueil
-            </Link>
+            <Link to="/" className="sidebar-link">Accueil</Link>
           </li>
 
           <li>
@@ -27,41 +30,23 @@ export default function Sidebar({ setSelectedModel }) {  // ← ajouter le prop
 
             {openTemplates && (
               <ul className="dropdown-menu">
-
-                {/* Ici on remplace les <Link> par des <img> avec onClick */}
-                <li>
-                  <img
-                    src="/im.png"
-                    alt="Modèle 1"
-                    className="miniature"
-                    onClick={() => setSelectedModel("model1")} // ← ouvre le deuxième sidebar
-                  />
-                </li>
-                <li>
-                  <img
-                    src="/images/model2.png"
-                    alt="Modèle 2"
-                    className="miniature"
-                    onClick={() => setSelectedModel("model2")}
-                  />
-                </li>
-                <li>
-                  <img
-                    src="/images/model3.png"
-                    alt="Modèle 3"
-                    className="miniature"
-                    onClick={() => setSelectedModel("model3")}
-                  />
-                </li>
-
+                {models.map((model) => (
+                  <li key={model.id}>
+                    <img
+                      src={model.img}
+                      alt={model.name}
+                      className="miniature"
+                      onClick={() => setSelectedModel(model.img.replace("/models/", "").replace(".png", ""))}
+                      title={model.name}
+                    />
+                  </li>
+                ))}
               </ul>
             )}
           </li>
 
           <li>
-            <Link to="/settings" className="sidebar-link">
-              Paramètres
-            </Link>
+            <Link to="/settings" className="sidebar-link">Paramètres</Link>
           </li>
         </ul>
       </nav>

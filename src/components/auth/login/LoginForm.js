@@ -10,9 +10,7 @@ function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (email && password) {
-      // Ici tu peux faire ton appel API pour vérifier les identifiants
       alert(`Bienvenue ${email}`);
       navigate("/dashboard");
     } else {
@@ -23,6 +21,12 @@ function LoginForm() {
   return (
     <div className="login-overlay">
       <div className="login-card">
+
+        {/* BOUTON RETOUR */}
+        <button className="close-btn" onClick={() => navigate("/")}>
+          ✖
+        </button>
+
         <h2 className="login-title">Connexion</h2>
 
         <form onSubmit={handleSubmit} className="login-form">

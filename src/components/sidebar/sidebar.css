@@ -66,3 +66,17 @@
 .chevron {
   font-size: 0.8rem;
 }
+
+
+.miniature {
+  width: 50px;        /* largeur fixe pour miniatures */
+  height: 50px;       /* hauteur fixe pour miniatures */
+  object-fit: cover;  /* ajuste l'image sans la déformer */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.miniature:hover {
+  transform: scale(1.1); /* léger zoom au survol */
+}

@@ -5,7 +5,11 @@ import LoginForm from "./components/auth/login/LoginForm";
 import RegisterForm from "./components/auth/register/RegisterForm";
 import Dashboard from "./pages/user/Dashboard";
 import Home from "./pages/home/Home";
-
+import Templates from "./pages/templates/Templates";
+import Help from "./pages/help/help";
+import Helpuser from "./pages/helpuser/helpuser";
+import Profile from "./pages/profile/profile"; // ← Nouvelle page Profil
+import Settings from "./pages/settings/settings"; // ← Nouvelle page Paramètres
 import MainLayout from "./layouts/MainLayout"; // Layout avec Header/Footer
 
 function App() {
@@ -26,8 +30,68 @@ function App() {
           }
         />
 
+        {/* Page modèles */}
+        <Route
+          path="/templates"
+          element={
+            <MainLayout>
+              <Templates />
+            </MainLayout>
+          }
+        />
+
+        <Route
+  path="/helpuser"
+  element={
+   
+      <Helpuser />
+  
+  }
+/>
+
+
+        {/* Page aide */}
+        <Route
+          path="/help"
+          element={
+            <MainLayout>
+              <Help />
+            </MainLayout>
+          }
+        />
+
+        {/* Page Profil */}
+        <Route
+          path="/profile"
+          element={
+          
+              <Profile />
+            
+          }
+        />
+
+        {/* Page Paramètres */}
+        <Route
+          path="/settings"
+          element={
+            
+              <Settings />
+          
+          }
+        />
+
         {/* Dashboard SANS Header/Footer */}
         <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Route fallback vers Accueil */}
+        <Route
+          path="*"
+          element={
+            <MainLayout>
+              <Home />
+            </MainLayout>
+          }
+        />
       </Routes>
     </Router>
   );

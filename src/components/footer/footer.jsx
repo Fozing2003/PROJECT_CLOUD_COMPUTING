@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="footer-contact">
           <h4>Contact</h4>
           <p>Email : support@cvmaker.com</p>
-          <p>Téléphone : +237 670 000 000</p>
+          <p>Téléphone : +237 600 000 000</p>
           <div className="socials">
             <a href="#" aria-label="Facebook">FB</a>
             <a href="#" aria-label="Twitter">TW</a>

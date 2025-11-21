@@ -11,14 +11,23 @@ export default function Header() {
   ];
 
   return (
-    
-    <header>
-      <div className="nav-container">
-        {nav.map((item, index) => (
-          <Link key={index} to={item.path} className="nav-link">
-            {item.name}
-          </Link>
-        ))}
+    <header className="header">
+      <div className="header-container">
+
+        {/* --- LOGO À GAUCHE --- */}
+        <div className="header-brand">
+          <div className="logo-box">CV</div>
+          <span className="brand-name">CV Maker</span>
+        </div>
+
+        {/* --- NAVIGATION À DROITE --- */}
+        <nav className="nav-container">
+          {nav.map((item, index) => (
+            <Link key={index} to={item.path} className="nav-link">
+              {item.name}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

@@ -25,7 +25,7 @@ function RegisterForm() {
       <div className="form-container">
 
         {/* BOUTON RETOUR */}
-        <button className="close-btn" onClick={() => navigate("/login")}>
+        <button className="close-btn" onClick={() => navigate("/")}>
           ✖
         </button>
 

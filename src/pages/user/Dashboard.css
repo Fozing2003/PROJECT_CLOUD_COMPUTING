@@ -89,3 +89,40 @@
 .delete-btn:hover {
   color: #e74c3c; /* rouge pour la corbeille */
 }
+
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.cv-table th, .cv-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.cv-table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.cv-table td {
+  background-color: #ffffff;
+}
+
+.cv-table tr:hover td {
+  background-color: #f9fafb;
+}
+
+.icon-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  color: red;
+}

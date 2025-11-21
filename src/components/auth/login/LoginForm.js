@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 
-function LoginForm({ onClose }) {
+function LoginForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,9 +10,11 @@ function LoginForm({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (email && password) {
-      // Ici tu peux faire ton appel API pour login
-      navigate("/dashboard"); // redirection vers dashboard
+      // Ici tu peux faire ton appel API pour vérifier les identifiants
+      alert(`Bienvenue ${email}`);
+      navigate("/dashboard");
     } else {
       alert("Veuillez entrer vos identifiants !");
     }
@@ -21,11 +23,6 @@ function LoginForm({ onClose }) {
   return (
     <div className="login-overlay">
       <div className="login-card">
-        {/* Bouton de retour */}
-        <button className="close-btn" onClick={onClose}>
-          ✖
-        </button>
-
         <h2 className="login-title">Connexion</h2>
 
         <form onSubmit={handleSubmit} className="login-form">
@@ -60,22 +57,24 @@ function LoginForm({ onClose }) {
             </div>
           </div>
 
+          <p 
+            className="forgot-password"
+            onClick={() => navigate("/forgot-password")}
+          >
+            Mot de passe oublié ?
+          </p>
+
           <button type="submit" className="login-btn">
             Se connecter
           </button>
         </form>
 
-        <div className="login-footer">
-          <p>
-            Pas de compte ?{" "}
-            <span
-              className="switch-btn"
-              onClick={() => navigate("/register")}
-            >
-              S’inscrire
-            </span>
-          </p>
-        </div>
+        <p className="switch-text">
+          Pas de compte ?{" "}
+          <span className="link" onClick={() => navigate("/register")}>
+            S’inscrire
+          </span>
+        </p>
       </div>
     </div>
   );

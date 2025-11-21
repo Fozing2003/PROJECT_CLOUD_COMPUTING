@@ -1,28 +1,91 @@
-.dashboard-container {
+.dashboard-layout {
   display: flex;
-}
-
-.dashboard-main {
-  margin-left: 230px;
-  padding: 20px;
   width: 100%;
-  background: #f5f6fa;
-  min-height: 100vh;
+  height: 100vh;
+  background: #f7f7f7;
 }
 
-.stats-section {
+/* Partie droite (topbar + contenu) */
+.dashboard-content {
+  flex: 1;
   display: flex;
-  gap: 20px;
-  margin-bottom: 30px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.content-section {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+/* Contenu sous le topbar */
+.dashboard-inner {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+   margin-top: 20px; 
 }
 
-.activity-list li {
-  margin: 10px 0;
+/* Styles de ton Dashboard */
+.welcome-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 40px 0 20px 0; 
+}
+
+.welcome-title span {
+  color: #2c3e50;
+}
+
+.create-btn {
+  background: #2c3e50;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.cv-section h2 {
+  margin-bottom: 10px;
+}
+
+.cv-list {
   list-style: none;
+  padding: 0;
+}
+
+.cv-item {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.cv-view-btn {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cv-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn:hover {
+  color: #2c3e50;
+}
+
+.delete-btn:hover {
+  color: #e74c3c; /* rouge pour la corbeille */
 }

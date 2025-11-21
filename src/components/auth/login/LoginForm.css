@@ -94,3 +94,11 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+.forgot-password {
+  color: #007bff;
+  cursor: pointer;
+  text-align: right;
+  margin: 5px 0 15px 0;
+  font-size: 0.9rem;
+}

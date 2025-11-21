@@ -6,13 +6,12 @@ import RegisterForm from "./components/auth/register/RegisterForm";
 import Dashboard from "./pages/user/Dashboard";
 import Home from "./pages/home/Home";
 
-import MainLayout from "./layouts/MainLayout";  // <-- CORRECTION ICI
+import MainLayout from "./layouts/MainLayout"; // Layout avec Header/Footer
 
 function App() {
   return (
     <Router>
       <Routes>
-
         {/* Pages SANS Header/Footer */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
@@ -27,15 +26,8 @@ function App() {
           }
         />
 
-        <Route
-          path="/dashboard"
-          element={
-            <MainLayout>
-              <Dashboard />
-            </MainLayout>
-          }
-        />
-
+        {/* Dashboard SANS Header/Footer */}
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

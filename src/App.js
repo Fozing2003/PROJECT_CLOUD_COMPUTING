@@ -11,6 +11,9 @@ import Helpuser from "./pages/helpuser/helpuser";
 import Profile from "./pages/profile/profile"; // ← Nouvelle page Profil
 import Settings from "./pages/settings/settings"; // ← Nouvelle page Paramètres
 import MainLayout from "./layouts/MainLayout"; // Layout avec Header/Footer
+import CreerCV from "./pages/CreerCV/CreerCV";
+import CreerModele from "./pages/CreerCV/CreerModele";
+
 
 function App() {
   return (
@@ -48,6 +51,23 @@ function App() {
   
   }
 />
+<Route
+  path="/creer-cv"
+  element={
+    <MainLayout>
+      <CreerCV />
+    </MainLayout>
+  }
+/>
+
+<Route
+  path="/creer-cv/:modele"
+  element={
+    <MainLayout>
+      <CreerModele />
+    </MainLayout>
+  }
+/>
 
 
         {/* Page aide */}
@@ -79,7 +99,8 @@ function App() {
           
           }
         />
-
+        
+        
         {/* Dashboard SANS Header/Footer */}
         <Route path="/dashboard" element={<Dashboard />} />
 

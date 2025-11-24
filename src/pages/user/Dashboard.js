@@ -4,8 +4,11 @@ import Topbar from "../../components/topbar/Topbar";
 import PreviewSidebar from "../../components/previewsidebar/previewsidebar";
 import { FaEye, FaTrash } from "react-icons/fa";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [cvList, setCvList] = useState([]);
   const [selectedModel, setSelectedModel] = useState(null);
@@ -40,8 +43,10 @@ export default function Dashboard() {
           <h1 className="welcome-title">
             Bienvenue sur votre espace personnel, <span>{userName}</span>
           </h1>
+          <button onClick={() => navigate("/creer-cv")}>
+             + Créer mon CV
+          </button>
 
-          <button className="create-btn">+ Créer mon CV</button>
 
           <div className="cv-section">
             <h2>Mes CV</h2>
